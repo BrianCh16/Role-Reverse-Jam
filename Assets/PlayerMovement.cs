@@ -42,7 +42,7 @@ public class PlayerMovement : MonoBehaviour
     }
     
     void OnTriggerEnter2D(Collider2D interactable) {
-        // TODO: Decouple this interaction and put in interactable script.
-        interactable.GetComponent<Rigidbody2D>().gravityScale = 20;
+        interactable.GetComponent<MeshRenderer>() = skin;
     } 
 }
+`
