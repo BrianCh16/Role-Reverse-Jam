@@ -42,7 +42,13 @@ public class PlayerMovement : MonoBehaviour
     }
     
     void OnTriggerEnter2D(Collider2D interactable) {
-        interactable.GetComponent<MeshRenderer>() = skin;
+        interactable.GetComponent<SpriteRenderer>().Material = skin;
     } 
+
+
+
 }
-`
+
+
+
+
