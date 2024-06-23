@@ -33,7 +33,6 @@ public class PlayerMovement : MonoBehaviour
     {
         float moveX = Input.GetAxisRaw("Horizontal");
         float moveY = Input.GetAxisRaw("Vertical");
-
         moveDirection = new Vector2(moveX, moveY).normalized;
     }
 
@@ -41,8 +40,9 @@ public class PlayerMovement : MonoBehaviour
     {
         rb.velocity = new Vector2(moveDirection.x * moveSpeed, moveDirection.y * moveSpeed);
     }
-    /*
-    OnTriggerEnter2D(Collider2D interactable) {
-        interactable.GetComponent<MeshRenderer>() = skin;
-    } */
+    
+    void OnTriggerEnter2D(Collider2D interactable) {
+        // TODO: Decouple this interaction and put in interactable script.
+        interactable.GetComponent<Rigidbody2D>().gravityScale = 20;
+    } 
 }
