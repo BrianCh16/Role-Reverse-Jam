@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     public GameObject interactable;
     private Vector2 moveDirection;
     [SerializeField]private Material skin;
+    [SerializeField] private float Gravmag;
 
     // Start is called before the first frame update
     void Start()
@@ -38,13 +39,13 @@ public class PlayerMovement : MonoBehaviour
 
     void Move()
     {
-        rb.velocity = new Vector2(moveDirection.x * moveSpeed, moveDirection.y * moveSpeed);
+        rb.velocity = new Vector2(moveDirection.x * moveSpeed * Time.deltaTime, moveDirection.y * moveSpeed * Time.deltaTime);
     }
     
     void OnTriggerEnter2D(Collider2D interactable) {
 
         // TODO: Decouple this interaction and put in interactable script.
-        interactable.GetComponent<Rigidbody2D>().gravityScale = 20;
+        interactable.GetComponent<Rigidbody2D>().gravityScale = Gravmag * Time.deltaTime;
     } 
 }
 

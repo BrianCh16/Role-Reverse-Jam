@@ -222,10 +222,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b92ae4cf88cb314789301b55cc2be9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 20
+  moveSpeed: 220
   rb: {fileID: 989757}
   interactable: {fileID: 1211268726}
   skin: {fileID: 2100000, guid: 74532ae5f17bf5544866fd81bb02313e, type: 2}
+  Gravmag: 175
 --- !u!50 &989757
 Rigidbody2D:
   serializedVersion: 4
